@@ -8,3 +8,8 @@ NCARDS = 8
 def GetCard(deckListin):
     thisCard = deckListin.pop()
     return thisCard
+
+def Shuffle(deckListin):
+    deckListOut = deckListin.copy()
+    random.shuffle(deckListOut)
+    return deckListOut

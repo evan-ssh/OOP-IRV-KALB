@@ -20,3 +20,17 @@ while True:
             print("\nInvalid password")
         else:
             print(f"\nAccount Balance: {accountBalance}")
+    
+    elif command == "d":
+        print("Password Required To Make A Deposit")
+        userPassword = input("Enter accounts password: ").strip()
+        if userPassword != accountPassword:
+            print("\nInvalid password")
+        else:
+            depositAmount = float(input("Enter amount to deposit"))
+            if depositAmount < 0:
+                print("You cannot deposit a number less than 0")
+            else:
+                accountBalance += depositAmount
+                print(f"Your Total Balance is now {accountBalance}")
+        

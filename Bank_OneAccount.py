@@ -33,4 +33,18 @@ while True:
             else:
                 accountBalance += depositAmount
                 print(f"Your Total Balance is now {accountBalance}")
-        
+    elif command == "w":
+        print("Password Required To Make A Deposit")
+        userPassword = input("Enter accounts password: ").strip()
+        if userPassword != accountPassword:
+            print("\nInvalid password")
+        else: 
+            withdrawAmount = float(input("Enter amount to withdraw"))
+            if withdrawAmount > accountBalance:
+                print("You cannot withdraw more money than you have")
+            elif withdrawAmount < 0:
+                print("You cannot withdraw a negative number")
+            else:
+                accountBalance -= withdrawAmount
+                print(f"Successfuly withdrew ${withdrawAmount}\n")
+                print(f"Remaining balance {accountBalance}")

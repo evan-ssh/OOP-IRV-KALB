@@ -48,3 +48,14 @@ while True:
                 accountBalance -= withdrawAmount
                 print(f"Successfuly withdrew ${withdrawAmount}\n")
                 print(f"Remaining balance {accountBalance}")
+
+    elif command == "s":
+        print("Password Required To Make A Deposit")
+        userPassword = input("Enter accounts password: ").strip()
+        if userPassword != accountPassword:
+            print("\nInvalid password")
+        else:
+            print("Account")
+            print(f"Name: {accountName}")
+            print(f"Balance: {accountBalance}")
+            print(f"Password: {accountPassword}")

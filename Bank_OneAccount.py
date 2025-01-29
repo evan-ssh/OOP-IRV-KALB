@@ -59,3 +59,9 @@ while True:
             print(f"Name: {accountName}")
             print(f"Balance: {accountBalance}")
             print(f"Password: {accountPassword}")
+
+    elif command == "q":
+        print("Thanks For Using Our Bank!")
+        break
+    else:
+        print("Invalid Command")

@@ -31,3 +31,12 @@ def deposit(accountNumber, amountToDeposit, password):
         return
     accountBalancesList[accountNumber] += amountToDeposit
     return accountBalancesList[accountNumber]
+def withdraw(accountNumber, amountToWithdraw, password):
+    global accountnamesList, accountBalancesList, accountPasswordsList
+    if password != accountPasswordsList[accountNumber]:
+        print("Incorrect Password")
+        return
+    if amountToWithdraw > accountBalancesList[accountNumber]:
+        print("You cannot withdraw more than you have")
+    accountBalancesList[accountNumber] -= amountToWithdraw
+    return accountBalancesList[accountNumber]

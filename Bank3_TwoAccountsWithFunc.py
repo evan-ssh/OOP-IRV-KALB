@@ -68,3 +68,27 @@ def deposit(accountNumber,password):
             account1Balance += depositAmount
             return account1Balance
         
+def withdraw(accountNumber,password):
+    global account0Name, account0Balance, account0Pass
+    global account1Name, account1Balance, account1Pass
+    if password != account0Pass or account1Pass:
+        print("Incorrect Password")
+        return
+    
+    if accountNumber == 0:
+        depositAmount = float(input("Enter withdrawal amount: "))
+        if depositAmount < 0:
+            print("You can not withdraw a negative amount")
+            return 
+        else:
+            account0Balance -= depositAmount
+            return account0Balance
+
+    if accountNumber == 1:
+        depositAmount = float(input("Enter withdrawal amount: "))
+        if depositAmount < 0:
+            print("You can not withdraw a negative amount")
+            return
+        else:
+            account1Balance -= depositAmount
+            return account1Balance

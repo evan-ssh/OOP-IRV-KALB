@@ -20,6 +20,7 @@ def newAccount(accountNumber,name,balance,password):
 
 def showAccount():
     global account0Name, account0Balance, account0Pass
+    print("Account Details")
     if account0Name != "":
         print(f"Account name {account0Name}")
         print(f"Account balance {account0Balance}")
@@ -98,3 +99,31 @@ def displayMenu():
     print("Press w to make withdrawal")
     print("Press s to show account details")
     print("Press q to quit")
+
+while True:
+    displayMenu()
+    command = input("Enter a command:").strip()
+    command = command[0]
+    if command == "b":
+        userAccountNumber = int(input("Please enter your account number"))
+        userPassword = input("Enter your password:")
+        theBalance = getBalance(userAccountNumber,userPassword)
+        print(f"Your balance is:{theBalance}")
+    elif command == "d":
+        print("Make a deposit")
+        userAccountNumber = int(input("Please enter your account number"))
+        userPassword = input("Enter your password:")
+        theBalance = deposit(userAccountNumber,userPassword)
+        print(f"Your balance is:{theBalance}")
+    elif command == "w":
+        print("Make a withdrawal")
+        userAccountNumber = int(input("Please enter your account number"))
+        userPassword = input("Enter your password:")
+        theBalance = withdraw(userAccountNumber,userPassword)
+        print(f"Your balance is:{theBalance}")
+    elif command == "s":
+        showAccount()
+    elif command == "q":
+        print("Thanks for using our bank")
+    else:
+        print("Not a valid command")

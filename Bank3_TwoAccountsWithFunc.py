@@ -20,7 +20,6 @@ def newAccount(accountNumber,name,balance,password):
 
 def showAccount():
     global account0Name, account0Balance, account0Pass
-
     if account0Name != "":
         print(f"Account name {account0Name}")
         print(f"Account balance {account0Balance}")
@@ -29,3 +28,17 @@ def showAccount():
         print(f"Account name {account1Name}")
         print(f"Account balance {account1Balance}")
         print(f"Account password {account1Pass}")
+
+def getBalance(accountNumber,password):
+    global account0Name, account0Balance, account0Pass
+    global account1Name, account1Balance, account1Pass
+    if accountNumber == 0:
+        if password != account0Pass:
+            print("Invalid Password")
+            return
+        return account0Balance
+    if accountNumber == 1:
+        if password != account1Pass:
+            print("Invalid Password")
+            return
+        return account1Balance

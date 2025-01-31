@@ -14,3 +14,10 @@ def showAccount(accountNumber):
     print(f"Account name {accountnamesList[accountNumber]}")
     print(f"Account balance {accountBalancesList[accountNumber]}")
     print(f"Account password {accountPasswordsList[accountNumber]}")
+
+def getBalance(accountNumber,password):
+    global accountnamesList, accountBalancesList, accountPasswordsList
+    if password != accountPasswordsList[accountNumber]:
+        print("Invalid Password")
+        return
+    return accountBalancesList[accountNumber]

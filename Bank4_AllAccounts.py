@@ -31,6 +31,7 @@ def deposit(accountNumber, amountToDeposit, password):
         return
     accountBalancesList[accountNumber] += amountToDeposit
     return accountBalancesList[accountNumber]
+
 def withdraw(accountNumber, amountToWithdraw, password):
     global accountnamesList, accountBalancesList, accountPasswordsList
     if password != accountPasswordsList[accountNumber]:
@@ -53,3 +54,44 @@ print("Tims account is account number:", len(accountnamesList))
 newAccount("Tim", 100, "soup")
 print("Jims account is account number:", len(accountnamesList))
 newAccount("Jim",200,"peanut")
+while True:
+    displayMenu()
+    command = input("Enter a command:").lower()
+    command = command[0]
+
+    if command == "b":
+        print("Get Balance:")
+        userAccountNumber = int(input("Enter your account number:"))
+        userPassword = input("Enter your password:")
+        theBalance = getBalance(userAccountNumber, userPassword)
+        print(f"The balance is ${theBalance}")
+    
+    elif command == "d":
+        print("Make a deposit")
+        userAccountNumber = int(input("Enter your account number:"))
+        userDepositAmount = float(input("Enter the amount to deposit:"))
+        userPassword = input("Enter your password:")
+        newBalance = deposit(userAccountNumber, userDepositAmount, userPassword)
+        print(f"The new balance is ${newBalance}")
+
+    elif command == "n":
+        print("Create a new account")
+        userName = input("Enter your name:")
+        userStartingAmount = float(input("Enter initial deposit:"))
+        userPassword = input("Enter a password")
+        userAccountNumber = len(accountnamesList)
+        newAccount(userName, userStartingAmount, userPassword)
+        print(f"Your new accounts number is{userAccountNumber}")
+
+    elif command == "w":
+        print("Make a withdrawal")
+        userAccountNumber = int(input("Please enter your account number:"))
+        userWithdrawalAmount = float(input("Enter the amount to withdraw:"))
+        userPassword = input("Enter your password:")
+        newBalance = withdraw(userAccountNumber,userWithdrawalAmount,userPassword)
+        print(f"The new balance is ${newBalance}")
+    elif command == "q":
+        print("Thanks for using our bank!")
+        break
+    else:
+        print("Invalid Command.")

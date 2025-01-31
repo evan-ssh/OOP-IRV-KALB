@@ -13,3 +13,10 @@ def showAccount():
     print(f"Account name {accountName}")
     print(f"Account balance {accountBalance}")
     print(f"Account password {accountPassword}")
+
+def getBalance(password):
+    global accountName,accountBalance,accountPassword
+    if password !=  accountPassword:
+        print("Invalid Password")
+        return
+    return accountBalance

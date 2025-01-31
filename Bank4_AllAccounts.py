@@ -40,3 +40,16 @@ def withdraw(accountNumber, amountToWithdraw, password):
         print("You cannot withdraw more than you have")
     accountBalancesList[accountNumber] -= amountToWithdraw
     return accountBalancesList[accountNumber]
+
+def displayMenu():
+    print("Press b to get the balance")
+    print("press d to make a deposit")
+    print("press n to create a new account")
+    print("press w to make a withdrawal")
+    print("Press s to show all accounts")
+    print("Press q to quit")
+
+print("Tims account is account number:", len(accountnamesList))
+newAccount("Tim", 100, "soup")
+print("Jims account is account number:", len(accountnamesList))
+newAccount("Jim",200,"peanut")

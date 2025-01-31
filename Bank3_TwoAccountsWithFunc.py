@@ -92,3 +92,9 @@ def withdraw(accountNumber,password):
         else:
             account1Balance -= depositAmount
             return account1Balance
+def displayMenu():
+    print("Press b to get the balance")
+    print("Press d to make deposit")
+    print("Press w to make withdrawal")
+    print("Press s to show account details")
+    print("Press q to quit")

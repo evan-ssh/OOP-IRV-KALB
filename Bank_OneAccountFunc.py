@@ -29,6 +29,17 @@ def deposit(amount,password):
     if password != accountPassword:
         print("Incorrect Password")
         return
-    
     accountBalance += amount
     print(f"Amount Deposited {amount}")
+
+def withdraw(amount,password):
+    global accountName, accountBalance, accountPassword
+    if amount < 0:
+        print("You can not withdraw a negative amount")
+        return
+    if password != accountPassword:
+        print("Incorrect Password")
+        return
+    accountBalance -= amount
+    print(f"Amount Withdrawn {amount}")
+    

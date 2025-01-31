@@ -42,4 +42,11 @@ def withdraw(amount,password):
         return
     accountBalance -= amount
     print(f"Amount Withdrawn {amount}")
+def displayMenu():
+    print("Press b to get the balance")
+    print("Press d to make deposit")
+    print("Press w to make withdrawal")
+    print("Press s to show account details")
+    print("Press q to quit")
     
+newAccount("Josh",233,"soup")

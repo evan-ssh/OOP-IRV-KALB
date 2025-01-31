@@ -7,3 +7,9 @@ def newAccount(name,balance,password):
     accountName = name
     accountBalance = balance
     accountPassword = password
+
+def showAccount():
+    global accountName,accountBalance,accountPassword
+    print(f"Account name {accountName}")
+    print(f"Account balance {accountBalance}")
+    print(f"Account password {accountPassword}")

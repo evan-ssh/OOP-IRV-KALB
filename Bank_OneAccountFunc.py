@@ -20,3 +20,15 @@ def getBalance(password):
         print("Invalid Password")
         return
     return accountBalance
+
+def deposit(amount,password):
+    global accountName, accountBalance, accountPassword
+    if amount < 0:
+        print("You can not deposit a negative amount")
+        return 
+    if password != accountPassword:
+        print("Incorrect Password")
+        return
+    
+    accountBalance += amount
+    print(f"Amount Deposited {amount}")

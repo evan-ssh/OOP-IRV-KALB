@@ -66,7 +66,10 @@ print(f"accout number {len(accountsList)}")
 while True:
     displayMenu()
     command = input("Enter a command:").lower()
+    if command == '':
+        continue
     command = command[0]
+    
 
     if command == "b":
         print("Get Account Balance")
@@ -95,4 +98,9 @@ while True:
     elif command == "s":
         print("Showing all accounts")
         showAllAccounts()
-    
+    elif command == "q":
+        print("Thanks for using our bank")
+        break
+    else:
+        print("Invalid Command")
+        

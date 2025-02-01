@@ -47,3 +47,11 @@ def withdraw(accountnumber, amountToWithdraw, password):
     accountDict['balance'] += amountToWithdraw
     print(f"{amountToWithdraw} has been depositd to your account, New Total {accountDict['balance']}")
     return accountDict['balance']
+
+def displayMenu():
+    print("'b' to get account Balance")
+    print("'d' to make a deposit")
+    print("'n' to create a new account")
+    print("'w' to make a withdrawal")
+    print("'s' to show all accounts")
+    print("'q' to exit program")

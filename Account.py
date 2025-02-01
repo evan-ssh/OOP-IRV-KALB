@@ -27,3 +27,9 @@ def withdraw(self,amountToWithdraw,password):
     self.balance -= amountToWithdraw
     return self.balance
 
+def getBalance(self,password):
+    if password != self.password:
+        print("Incorrect Password")
+        return None
+    else:
+        print(f"Your balance is {self.balance}")

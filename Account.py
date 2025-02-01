@@ -33,3 +33,8 @@ def getBalance(self,password):
         return None
     else:
         print(f"Your balance is {self.balance}")
+
+def showAccount(self):
+    print(f"Account Name:{self.name}")
+    print(f"Account Balance:{self.balance}")
+    print(f"Account Password:{self.password}")

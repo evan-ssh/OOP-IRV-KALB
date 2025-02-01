@@ -35,4 +35,15 @@ def deposit(accountnumber, amountToDeposit, password):
     print(f"{amountToDeposit} has been depositd to your account, New Total {accountDict['balance']}")
     return accountDict['balance']
 
-
+def withdraw(accountnumber, amountToWithdraw, password):
+    global accountsList
+    accountDict = accountsList[accountnumber]
+    if password != accountDict['password']:
+        print("Incorrect Password")
+        return
+    if amountToWithdraw < 0:
+        print("You cannot deposit a negative amount")
+        return
+    accountDict['balance'] += amountToWithdraw
+    print(f"{amountToWithdraw} has been depositd to your account, New Total {accountDict['balance']}")
+    return accountDict['balance']

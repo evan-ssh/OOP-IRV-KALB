@@ -21,3 +21,18 @@ def getBalance(accountnumber,password):
         return
     else:
         print(f"Account Balance:{accountDict['balance']}")
+
+def deposit(accountnumber, amountToDeposit, password):
+    global accountsList
+    accountDict = accountsList[accountnumber]
+    if password != accountDict['password']:
+        print("Incorrect Password")
+        return
+    if amountToDeposit < 0:
+        print("You cannot deposit a negative amount")
+        return
+    accountDict['balance'] += amountToDeposit
+    print(f"{amountToDeposit} has been depositd to your account, New Total {accountDict['balance']}")
+    return accountDict['balance']
+
+

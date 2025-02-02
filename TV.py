@@ -46,3 +46,8 @@ class TV():
         self.ChannelIndex -= 1
         if self.ChannelIndex < 0:
             self.ChannelIndex = self.nChannels - 1 #Go to top channel
+    
+    def mute(self):
+        if not self.isOn:
+            return
+        self.isMuted = not self.isMuted

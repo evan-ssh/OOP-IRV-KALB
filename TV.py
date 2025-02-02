@@ -9,4 +9,9 @@ class TV():
         self.VOLUME_MINIUM = 0
         self.VOLUME_MAXIMUM = 10
         self.volume = self.VOLUME_MAXIMUM//2
-        
+
+    def power(self):
+        self.isOn = not self.isOn
+    
+    
+

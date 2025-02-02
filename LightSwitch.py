@@ -17,3 +17,5 @@ if __name__ == "__main__":
     switch.showSwitchState()
     switch.turnOFF()
     switch.showSwitchState()
+    switch.turnON()
+    switch.showSwitchState()

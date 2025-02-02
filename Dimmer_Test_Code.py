@@ -21,3 +21,27 @@ class DimmerSwitch():
     def showSwitchState(self):
         print(f"The switch is on {self.SwitchIsOn}")
         print(f"The brightness level is {self.brightness}")
+    
+if __name__ == "__main__":
+    dimmer = DimmerSwitch()
+    #Swithc is on raising brightness 5 times
+    dimmer.turnON()
+    dimmer.raiseLevel()
+    dimmer.raiseLevel()
+    dimmer.raiseLevel()
+    dimmer.raiseLevel()
+    dimmer.raiseLevel()
+    dimmer.showSwitchState()
+    print()
+    #Lower Brightness twice then turn off
+    dimmer.lowerLevel()
+    dimmer.lowerLevel()
+    dimmer.turnOFF()
+    dimmer.showSwitchState()
+    print()
+    #Turn Switch on and raise brightness 3 times
+    dimmer.turnON()
+    dimmer.raiseLevel()
+    dimmer.raiseLevel() 
+    dimmer.raiseLevel()
+    dimmer.showSwitchState()

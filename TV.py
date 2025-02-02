@@ -25,3 +25,12 @@ class TV():
         if self.volume < self.VOLUME_MAXIMUM:
             self.volume += 1
 
+    def volumeDown(self):
+        if not self.isOn:
+            return
+
+        if self.isMuted:
+            self.isMuted = False
+            return
+        if self.volume > self.VOLUME_MAXIMUM:
+            self.volume += 1

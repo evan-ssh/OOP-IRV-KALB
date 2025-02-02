@@ -51,3 +51,18 @@ class TV():
         if not self.isOn:
             return
         self.isMuted = not self.isMuted
+    def setChannel(self,channel):
+        if newChannel in  self.channelList:
+            self.ChannelIndex = self.channelList.index(channel)
+        
+    def showInfo(self):
+        print("TV STATUS")
+        if self.IsOn:
+            print("The TV is on")
+            print(f"Channel is {self.channelList[self.ChannelIndex]}")
+            if self.isMuted:
+                print("The TV is muted")
+            else:
+                print(f"Volume is {self.volume}")
+        else:
+            print("The TV is off")

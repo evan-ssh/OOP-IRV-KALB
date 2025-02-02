@@ -37,7 +37,12 @@ class TV():
     def channelUP(self):
         if not self.isOn:
             return
-        self.channelUP += 1
-        if self.channelUP > self.nChannels:
-            self.channelUP = 0 #Return to first channel
-        
+        self.ChannelIndex += 1
+        if self.ChannelIndex > self.nChannels:
+            self.ChannelIndex = 0 #Return to first channel
+    def channelDOWN(self):
+        if not self.isOn:
+            return
+        self.ChannelIndex -= 1
+        if self.ChannelIndex < 0:
+            self.ChannelIndex = self.nChannels - 1 #Go to top channel

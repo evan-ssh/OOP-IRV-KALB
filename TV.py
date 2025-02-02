@@ -34,3 +34,10 @@ class TV():
             return
         if self.volume > self.VOLUME_MAXIMUM:
             self.volume += 1
+    def channelUP(self):
+        if not self.isOn:
+            return
+        self.channelUP += 1
+        if self.channelUP > self.nChannels:
+            self.channelUP = 0 #Return to first channel
+        
